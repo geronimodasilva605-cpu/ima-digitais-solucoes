@@ -1,0 +1,17 @@
+PASSO A PASSO — SISTEMA DE MENSAGENS
+
+1. Crie um projeto no Firebase Console.
+2. Adicione um aplicativo Web ao projeto.
+3. Copie a configuração do app e substitua os valores em firebase-config.js.
+4. No Authentication, ative Email/Password.
+5. Crie o seu utilizador administrador.
+6. No Firestore Database, crie a base em modo de produção.
+7. Publique as regras do arquivo firestore.rules.
+8. Faça upload dos arquivos para o hosting/repositório.
+9. Abra admin.html para entrar no painel.
+
+O site público grava em `messages`.
+O painel `admin.html` mostra as mensagens somente para utilizadores autenticados.
+
+IMPORTANTE: não publique passwords, chaves privadas ou service account keys.
+A configuração web do Firebase pode ficar no código cliente, mas a proteção real vem das Security Rules e da autenticação.
