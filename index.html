@@ -20,4 +20,22 @@
 <section id="contacto" class="section contact reveal"><div><p class="eyebrow">06 / CONTACTO</p><h2>Conte-nos o que a sua empresa precisa.</h2><p>A mensagem fica guardada no sistema privado da IMA. Você não precisa depender do WhatsApp para receber pedidos.</p></div><form id="contactForm"><label>Nome<input id="name" required></label><label>Email<input id="email" type="email" required></label><label>Empresa<input id="company"></label><label>Serviço<select id="service" required><option value="">Selecione</option><option>Website</option><option>Identidade visual</option><option>Design gráfico</option><option>Catálogo digital</option><option>Marketing digital</option><option>Sistema interno</option></select></label><label>Mensagem<textarea id="message" rows="6" required></textarea></label><button class="btn primary" type="submit">Enviar mensagem ↗</button><p id="status"></p></form></section>
 </main>
 <footer><div><b>IMA DIGITAIS SOLUÇÕES</b><span>Transformamos ideias em soluções digitais.</span></div><div>Angola • +244 955 005 693</div><div>© <span id="year"></span></div></footer>
-<script type="module" src="app.js"></script></body></html>
+<script type="module" src="app.js"></script>
+  <div class="ima-chat" aria-live="polite">
+    <button id="chat-toggle" class="chat-toggle" aria-label="Abrir assistente da IMA">💬</button>
+    <section id="chat-panel" class="chat-panel" hidden>
+      <header class="chat-head">
+        <div><strong>Assistente IMA</strong><small>Atendimento automático</small></div>
+        <button id="chat-close" aria-label="Fechar">×</button>
+      </header>
+      <div id="chat-messages" class="chat-messages"></div>
+      <div id="chat-quick" class="chat-quick"></div>
+      <form id="chat-form" class="chat-form">
+        <input id="chat-input" autocomplete="off" placeholder="Escreva a sua pergunta..." required>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+<script src="chat.js"></script>
+</body></html>

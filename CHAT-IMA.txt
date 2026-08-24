@@ -1,0 +1,6 @@
+O chat é uma versão inicial automática e gratuita:
+- responde perguntas comuns sobre serviços, websites, preços, orçamento e recrutamento;
+- funciona sem API de IA paga;
+- guarda a conversa no navegador do visitante nesta versão.
+
+Próxima etapa: ligar as conversas ao Firestore para aparecerem no painel privado e permitir que o administrador assuma o atendimento.
