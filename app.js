@@ -1,29 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 import { firebaseConfig } from "./firebase-config.js";
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const form = document.getElementById("contactForm");
-const status = document.getElementById("status");
-
-form?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  status.textContent = "A enviar...";
-  try {
-    await addDoc(collection(db, "messages"), {
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      company: document.getElementById("company").value.trim(),
-      service: document.getElementById("service").value,
-      message: document.getElementById("message").value.trim(),
-      createdAt: serverTimestamp(),
-      status: "new"
-    });
-    form.reset();
-    status.textContent = "Mensagem enviada com sucesso. Obrigado!";
-  } catch (err) {
-    console.error(err);
-    status.textContent = "Não foi possível enviar. Verifique a configuração do Firebase.";
-  }
-});
+const app=initializeApp(firebaseConfig); const db=getFirestore(app);
+const menu=document.querySelector('.menu'), nav=document.querySelector('.nav'); menu?.addEventListener('click',()=>nav.classList.toggle('open')); document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const ob=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.1}); document.querySelectorAll('.reveal').forEach(x=>ob.observe(x)); document.getElementById('year').textContent=new Date().getFullYear();
+const form=document.getElementById('contactForm'); const status=document.getElementById('status');
+form?.addEventListener('submit',async e=>{e.preventDefault();status.textContent='A enviar...';try{await addDoc(collection(db,'messages'),{name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),company:document.getElementById('company').value.trim(),service:document.getElementById('service').value,message:document.getElementById('message').value.trim(),createdAt:serverTimestamp(),status:'new'});form.reset();status.textContent='Mensagem recebida. Entraremos em contacto em breve.'}catch(err){console.error(err);status.textContent='Não foi possível enviar. Verifique a configuração do sistema.'}});

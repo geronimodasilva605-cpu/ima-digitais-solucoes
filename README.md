@@ -1,24 +1,22 @@
-# IMA Digitais Soluções — Website
+# IMA Digitais Soluções — Portal da Empresa
 
-Website responsivo em HTML, CSS e JavaScript, pronto para publicação no GitHub Pages.
+Website público + painel privado em Firebase.
 
-## Estrutura
-- `index.html` — página principal
-- `style.css` — estilos
-- `script.js` — menu, animações e formulário para WhatsApp
-- `assets/hero-stitch.png` — imagem enviada pelo utilizador a partir do Google Stitch
+## Recursos
+- Site público com portfólio e animações
+- Galeria de trabalhos
+- Google Maps/navegação
+- Formulário de contacto armazenado no Firestore
+- Painel privado com login Firebase
+- Mensagens
+- Funcionários: contratar e inativar mantendo histórico
+- Clientes
+- Projetos
 
-## Publicar no GitHub Pages
-1. Crie um repositório público no GitHub, por exemplo `ima-digitais-solucoes`.
-2. Envie todos os arquivos desta pasta para a raiz do repositório.
-3. Abra **Settings → Pages**.
-4. Em **Build and deployment**, escolha **Deploy from a branch**.
-5. Escolha a branch `main` e a pasta `/ (root)`.
-6. Clique em **Save**.
-7. Aguarde a publicação do endereço do GitHub Pages.
+## IMPORTANTE — primeiro administrador
+As regras usam `admins/{uid}` para autorizar o dono/administrador.
+Depois de criar o utilizador administrador no Firebase Authentication, copie o UID desse usuário em **Firestore > dados > admins** criando um documento com ID exatamente igual ao UID.
+Não crie uma regra que permita qualquer usuário autenticado administrar a empresa.
 
-## Nota sobre o portfólio
-Os nomes NovaTech Angola, Casa Bella Decor, Sabor da Terra, Kwanza Fashion, AgroFuturo e EducaMais são projetos-conceito demonstrativos e não devem ser apresentados como clientes reais.
-
-## Contacto
-WhatsApp: +244 955 005 693
+## Publicação
+Envie os arquivos para o GitHub Pages. O site público fica em `index.html` e o painel em `admin.html`.

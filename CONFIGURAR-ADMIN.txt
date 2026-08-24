@@ -1,0 +1,21 @@
+PASSO 1 — Firebase Authentication
+1. Authentication > Usuários.
+2. Confirme que seu usuário administrador existe.
+3. Copie o UID desse usuário.
+
+PASSO 2 — Firestore > Dados
+1. Crie a coleção `admins`.
+2. Crie um documento cujo ID seja exatamente o UID copiado.
+3. Pode deixar o documento sem campos.
+
+Isso faz com que somente esse usuário seja reconhecido como administrador pelas regras.
+
+PASSO 3 — Firestore > Regras
+Substitua as regras atuais pelo conteúdo de `firestore.rules` e clique em Publicar.
+
+PASSO 4 — Painel
+Abra /admin.html, entre com seu usuário e confirme acesso.
+
+NOTA
+Contratar cria um registro de funcionário como Ativo.
+Despedir usa o botão Inativar, preservando o histórico em vez de apagar o funcionário.
